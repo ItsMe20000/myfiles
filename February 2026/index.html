@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine Week Special 💖</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+
+
+
+/* 4x2 grid centered with equal card sizes */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns */
+  grid-template-rows: repeat(2, 1fr);    /* 2 rows */
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.card {
+  width: 180px;   /* fixed width for equal size */
+  height: 120px;  /* fixed height for equal size */
+}
+
+
+
+    /* Animated background gradient */
+    body {
+      background: linear-gradient(270deg, #ff9a9e, #fad0c4, #ffdde1, #ff758c, #ff1e56);
+      background-size: 1000% 1000%;
+      animation: gradientShift 20s ease infinite;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      text-align: center;
+      padding: 40px;
+      color: #333;
+      overflow: hidden;
+    }
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Pulsing glow + fade-in for heading */
+    h1 {
+      font-size: 3em;
+      opacity: 0;
+      animation: fadeInText 2s ease forwards, pulseGlow 3s infinite alternate;
+    }
+    @keyframes pulseGlow {
+      from { text-shadow: 0 0 15px #ff4d6d, 0 0 30px #ff758c; }
+      to { text-shadow: 0 0 30px #ff1e56, 0 0 60px #ff4d6d; }
+    }
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Subtitle fade-in */
+    p {
+      opacity: 0;
+      animation: fadeInText 2s ease forwards;
+      animation-delay: 1s;
+    }
+
+    /* Emoji float animation */
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+    .card span {
+      animation: float 2s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+
+    /* Hover effect: emoji grows */
+    .card:hover span {
+      transform: scale(1.3);
+    }
+
+    /* Blinking dates */
+    @keyframes blink {
+      0% { opacity: 1; }
+      50% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .card small {
+      animation: blink 1.5s infinite;
+    }
+
+    /* Fade-in effect for cards */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .card {
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+      transition: box-shadow 0.3s ease;
+    }
+    /* Staggered fade-in for each card */
+    .card:nth-child(1) { animation-delay: 0.2s; }
+    .card:nth-child(2) { animation-delay: 0.4s; }
+    .card:nth-child(3) { animation-delay: 0.6s; }
+    .card:nth-child(4) { animation-delay: 0.8s; }
+    .card:nth-child(5) { animation-delay: 1s; }
+    .card:nth-child(6) { animation-delay: 1.2s; }
+    .card:nth-child(7) { animation-delay: 1.4s; }
+    .card:nth-child(8) { animation-delay: 1.6s; }
+
+    /* Soft glowing aura on hover */
+    .card:hover {
+      box-shadow: 0 0 20px 5px rgba(255, 77, 109, 0.6);
+    }
+
+    /* Sparkle particles with fade-in */
+    .sparkle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: white;
+      border-radius: 50%;
+      opacity: 0;
+      animation: sparkleDrift 10s linear infinite, sparkleFadeIn 2s ease forwards;
+    }
+    @keyframes sparkleDrift {
+      0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+    }
+    @keyframes sparkleFadeIn {
+      from { opacity: 0; }
+      to { opacity: 0.8; }
+    }
+
+    /* Heartbeat animation for Valentine’s Day emoji */
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.2); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.2); }
+      100% { transform: scale(1); }
+    }
+    .valentine-heart {
+      animation: heartbeat 1.5s ease-in-out infinite;
+    }
+
+    /* Confetti burst */
+    .confetti {
+      position: absolute;
+      width: 8px;
+      height: 14px;
+      background: red;
+      opacity: 0.9;
+      transform: rotate(20deg);
+      animation: confettiFall 3s ease-out forwards;
+    }
+    @keyframes confettiFall {
+      0% { transform: translateY(-20px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Welcome to Valentine Week 💕</h1>
+  <p>Celebrate love every day with something special!</p>
+  
+  <div class="grid">
+    <a href="rose.html" class="card"><span>🌹</span>Rose Day<small>07 Feb</small></a>
+    <a href="propose.html" class="card"><span>💍</span>Propose Day<small>08 Feb</small></a>
+    <a href="chocolate.html" class="card"><span>🍫</span>Chocolate Day<small>09 Feb</small></a>
+    <a href="teddy.html" class="card"><span>🧸</span>Teddy Day<small>10 Feb</small></a>
+    <a href="promise.html" class="card"><span>🤝</span>Promise Day<small>11 Feb</small></a>
+    <a href="hug.html" class="card"><span>🤗</span>Hug Day<small>12 Feb</small></a>
+    <a href="kiss.html" class="card"><span>💋</span>Kiss Day<small>13 Feb</small></a>
+    <a href="valentine.html" class="card"><span class="valentine-heart">❤️</span>Valentine’s Day<small>14 Feb</small></a>
+  </div>
+  <script>
+    function createSparkle(){
+      const sparkle=document.createElement('div');
+      sparkle.classList.add('sparkle');
+      sparkle.style.left=Math.random()*window.innerWidth+'px';
+      sparkle.style.animationDuration=(6+Math.random()*6)+'s';
+      document.body.appendChild(sparkle);
+      setTimeout(()=>sparkle.remove(),12000);
+    }
+    for(let i=0;i<20;i++){ createSparkle(); }
+    setInterval(createSparkle,400);
+
+    /* Confetti burst on load */
+    function createConfetti(){
+      const confetti=document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left=Math.random()*window.innerWidth+'px';
+      confetti.style.background = ['#ff4d6d','#ff758c','#ffdde1','#fad0c4','#ff1e56'][Math.floor(Math.random()*5)];
+      document.body.appendChild(confetti);
+      setTimeout(()=>confetti.remove(),3000);
+    }
+    for(let i=0;i<80;i++){ setTimeout(createConfetti, i*30); }
+  </script>
+
+ <audio autoplay loop>
+    <source src="https://dilip3399.github.io/valentine-week/0.mpeg" type="audio/mpeg">
+
+  </audio>
+</body>
+</html>
