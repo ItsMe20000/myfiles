@@ -12,9 +12,9 @@ export default function FriendsList({ currentUser, onSelectFriend }) {
       .catch(err => console.error("Error fetching friends:", err));
   };
 
-  useEffect(() => {
+ useEffect(() => {
   fetchFriends();
-}, []);
+}, [fetchFriends]);
 
   // Add friend
   const addFriend = () => {
