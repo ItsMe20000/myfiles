@@ -6,7 +6,11 @@ export default function FriendsList({ currentUser, onSelectFriend }) {
 
   // Stable fetchFriends using useCallback
   const fetchFriends = useCallback(() => {
+<<<<<<< HEAD
     fetch(`https://myfiles-1-e36b.onrender.com/friends/${currentUser.userId}`)
+=======
+    fetch(`http://localhost:3001/friends/${currentUser.userId}`)
+>>>>>>> e43d757e70244d0b9db368fa3326a3d73a718a99
       .then(res => res.json())
       .then(data => setFriends(data))
       .catch(err => console.error("Error fetching friends:", err));
