@@ -12,7 +12,7 @@ export default function Login({ onLogin }) {
     }
 
     try {
-      const res = await fetch("http://localhost:3001/login", {
+      const res = await fetch("https://myfiles-1-e36b.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, password })

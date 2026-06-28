@@ -6,7 +6,7 @@ export default function FriendsList({ currentUser, onSelectFriend }) {
 
   // Stable fetchFriends using useCallback
   const fetchFriends = useCallback(() => {
-    fetch(`http://localhost:3001/friends/${currentUser.userId}`)
+    fetch(`https://myfiles-1-e36b.onrender.com/friends/${currentUser.userId}`)
       .then(res => res.json())
       .then(data => setFriends(data))
       .catch(err => console.error("Error fetching friends:", err));
@@ -20,7 +20,7 @@ export default function FriendsList({ currentUser, onSelectFriend }) {
   // Add friend
   const addFriend = () => {
     if (!newFriendId.trim()) return;
-    fetch("http://localhost:3001/addFriend", {
+    fetch("https://myfiles-1-e36b.onrender.com/addFriend", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ userId: currentUser.userId, friendId: newFriendId })

@@ -8,7 +8,7 @@ export default function ChatPage({ currentUser, friend, socket, onBack, onCall }
   useEffect(() => {
     socket.emit("register user", currentUser.userId);
 
-    fetch(`http://localhost:3001/chat/${currentUser.userId}/${friend.userId}`)
+    fetch(`https://myfiles-1-e36b.onrender.com/chat/${currentUser.userId}/${friend.userId}`)
       .then(res => res.json())
       .then(data => setMessages(data));
 
