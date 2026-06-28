@@ -1,20 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 export default function FriendsList({ currentUser, onSelectFriend }) {
   const [friends, setFriends] = useState([]);
   const [newFriendId, setNewFriendId] = useState("");
 
-  // Load friends list
-  const fetchFriends = () => {
+  // Stable fetchFriends using useCallback
+  const fetchFriends = useCallback(() => {
     fetch(`http://localhost:3001/friends/${currentUser.userId}`)
       .then(res => res.json())
       .then(data => setFriends(data))
       .catch(err => console.error("Error fetching friends:", err));
-  };
+  }, [currentUser.userId]);
 
+  // Load friends list once currentUser changes
   useEffect(() => {
     fetchFriends();
-  }, [currentUser.userId]);
+  }, [fetchFriends]);
 
   // Add friend
   const addFriend = () => {
