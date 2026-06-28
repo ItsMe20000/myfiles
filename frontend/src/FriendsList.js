@@ -13,8 +13,8 @@ export default function FriendsList({ currentUser, onSelectFriend }) {
   };
 
   useEffect(() => {
-    fetchFriends();
-  }, [currentUser.userId]);
+  fetchFriends();
+}, []);
 
   // Add friend
   const addFriend = () => {
